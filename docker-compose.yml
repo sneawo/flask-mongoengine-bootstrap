@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    environment:
+      - FLASK_DEBUG=1
+    links:
+      - db
+    restart: on-failure
+  db:
+    image: mongo:3.4.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db_data:/data/db

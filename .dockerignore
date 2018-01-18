@@ -1,0 +1,8 @@
+env
+.idea
+.vscode
+.coverage
+*.pyc
+__pycache__
+coverage
+db_data
